@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linking Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #0078d7;
+    }
+    a {
+      display: block;
+      margin: 10px 0;
+      color: #0055cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    section {
+      margin-top: 50px;
+      padding: 10px;
+      border-top: 2px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Linking Demonstration</h1>
+
+  <h2>Links:</h2>
+
+  <!-- a) Link to a different web page of the same site -->
+  <a href="about.html">a) Go to About Page (Different Page, Same Site)</a>
+
+  <!-- b) Link to a different location on the same web page -->
+  <a href="#section2">b) Jump to Section 2 (Same Page)</a>
+
+  <!-- c) Link to a specific location on another page -->
+  <a href="about.html#contact">c) Go to Contact Section on About Page</a>
+
+  <hr>
+
+  <section id="section1">
+    <h2>Section 1</h2>
+    <p>This is section 1 of the same web page.</p>
+  </section>
+
+  <section id="section2">
+    <h2>Section 2</h2>
+    <p>This is section 2 — if you clicked the “Same Page” link above, you were scrolled here!</p>
+  </section>
+
+</body>
+</html>

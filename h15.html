@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Selection Styling</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      margin: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1a73e8;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 18px;
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Text selection styling */
+    ::selection {
+      background-color: #1a73e8;
+      color: #fff;
+    }
+
+    ::-moz-selection {
+      background-color: #1a73e8;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Custom Text Selection</h1>
+
+  <p>
+    This page demonstrates how we can change the color of the text selection 
+    using simple CSS. Try selecting this paragraph with your mouse or keyboard. 
+    You will see a custom blue highlight instead of the default system color.
+  </p>
+
+  <p>
+    The <strong>::selection</strong> pseudo-element allows us to set the 
+    <em>background-color</em> and <em>text color</em> for the portion of text 
+    selected by the user. This helps create a more personalized and stylish web page.
+  </p>
+</body>
+</html>

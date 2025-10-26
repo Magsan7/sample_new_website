@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Form</title>
+</head>
+<body>
+    <h1>Student Feedback Form</h1>
+
+    <form>
+     
+        <fieldset>
+            <legend><strong>Student Information</strong></legend>
+
+            <label for="fullname">Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname" required><br><br>
+
+            <label for="rollnumber">Roll Number:</label><br>
+            <input type="text" id="rollnumber" name="rollnumber" required><br><br>
+
+            <label>Department:</label><br>
+            <input type="checkbox" id="cse" name="department" value="CSE">
+            <label for="cse">CSE</label><br>
+
+            <input type="checkbox" id="ece" name="department" value="ECE">
+            <label for="ece">ECE</label><br>
+
+            <input type="checkbox" id="me" name="department" value="ME">
+            <label for="me">ME</label><br>
+
+            <input type="checkbox" id="IT" name="department" value="IT">
+            <label for="IT">IT</label><br>
+
+            <input type="checkbox" id="ee" name="department" value="EE">
+            <label for="ee">EE</label><br><br>
+
+            <label>Year of Study:</label><br>
+            <input type="radio" id="year1" name="year" value="1st" required>
+            <label for="year1">1st Year</label><br>
+
+            <input type="radio" id="year2" name="year" value="2nd">
+            <label for="year2">2nd Year</label><br>
+
+            <input type="radio" id="year3" name="year" value="3rd">
+            <label for="year3">3rd Year</label><br>
+
+            <input type="radio" id="year4" name="year" value="4th">
+            <label for="year4">4th Year</label><br><br>
+        </fieldset>
+
+    
+        <fieldset>
+            <legend><strong>Feedback Section</strong></legend>
+
+            <label>Rate the Course Content:</label><br>
+            <input type="radio" id="content-excellent" name="content" value="Excellent" required>
+            <label for="content-excellent">Excellent</label><br>
+
+            <input type="radio" id="content-good" name="content" value="Good">
+            <label for="content-good">Good</label><br>
+
+            <input type="radio" id="content-average" name="content" value="Average">
+            <label for="content-average">Average</label><br>
+
+            <input type="radio" id="content-poor" name="content" value="Poor">
+            <label for="content-poor">Poor</label><br><br>
+
+            <label>Rate the Instructor:</label><br>
+            <input type="radio" id="instructor-excellent" name="instructor" value="Excellent" required>
+            <label for="instructor-excellent">Excellent</label><br>
+
+            <input type="radio" id="instructor-good" name="instructor" value="Good">
+            <label for="instructor-good">Good</label><br>
+
+            <input type="radio" id="instructor-average" name="instructor" value="Average">
+            <label for="instructor-average">Average</label><br>
+
+            <input type="radio" id="instructor-poor" name="instructor" value="Poor">
+            <label for="instructor-poor">Poor</label><br><br>
+
+            <label>Would you recommend this course to juniors?</label><br>
+            <input type="radio" id="recommend-yes" name="recommend" value="Yes" required>
+            <label for="recommend-yes">Yes</label><br>
+
+            <input type="radio" id="recommend-no" name="recommend" value="No">
+            <label for="recommend-no">No</label><br><br>
+        </fieldset>
+
+        
+        <input type="submit" value="Submit Feedback">
+    </form>
+</body>
+</html>
