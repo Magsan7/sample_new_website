@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HTML — Complete Notes (GeeksforGeeks + W3Schools style)</title>
+  <style>
+    /* Clean, readable styling (print-friendly) */
+    :root{
+      --accent:#0b6ea8;
+      --muted:#555;
+      --mono: "Courier New", monospace;
+      --maxw:980px;
+    }
+    body{font-family: Georgia, "Times New Roman", serif; color:#222; line-height:1.45; margin:20px; display:flex; justify-content:center;}
+    .wrap{max-width:var(--maxw); width:100%;}
+    header{border-bottom:4px solid var(--accent); padding-bottom:8px; margin-bottom:18px;}
+    h1{color:var(--accent); margin:0; font-size:28px;}
+    .meta{color:var(--muted); margin-top:6px;}
+    section{margin-bottom:18px; page-break-inside:avoid;}
+    h2{font-size:20px; color:#08394f; margin:14px 0 6px;}
+    h3{font-size:16px; color:#0b5f7a; margin:10px 0;}
+    p{margin:6px 0;}
+    ul{margin:6px 0 12px 20px;}
+    code{background:#f4f4f4; padding:2px 6px; border-radius:4px; font-family:var(--mono); font-size:0.95em;}
+    pre{background:#f8f8f8; padding:12px; border-left:4px solid var(--accent); overflow:auto; font-family:var(--mono); font-size:0.95em;}
+    .note{background:#fffbe6; padding:8px; border-left:4px solid #ffd24d; margin:8px 0;}
+    table{border-collapse:collapse; width:100%; margin:8px 0;}
+    th,td{border:1px solid #ddd; padding:8px; text-align:left;}
+    th{background:#f2f9fc;}
+    .key{font-weight:bold; color:#0a4b63;}
+    footer{border-top:1px solid #eee; padding-top:10px; color:var(--muted); margin-top:18px;}
+    .code-block{margin:8px 0;}
+    .badge{display:inline-block; background:var(--accent); color:white; padding:2px 8px; border-radius:4px; font-size:0.85em; margin-right:6px;}
+    @media print{
+      body{margin:0;}
+      header, footer{page-break-after:avoid;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>HTML — Complete Notes</h1>
+      <div class="meta">Concise + practical notes in bullet style. Definitions • Syntax • Examples • Best practices • Interview Qs</div>
+    </header>
+
+    <!-- 1 -->
+    <section id="intro">
+      <h2>1. Introduction &amp; History of HTML</h2>
+      <ul>
+        <li><span class="key">HTML</span> = <strong>HYPERTEXT MARKUP LANGUAGE</strong> — describes structure of web pages.</li>
+        <li>Invented by <strong>Tim Berners-Lee (1991)</strong> to publish and link documents on the Web.</li>
+        <li>HTML uses <strong>tags</strong> (e.g., <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>) to mark elements.</li>
+        <li><strong>HTML5</strong> added semantic tags, multimedia, canvas, offline APIs, and modern web capabilities.</li>
+        <li>Important: <strong>HTML = structure</strong> (use CSS for style, JS for behavior).</li>
+      </ul>
+    </section>
+
+    <!-- 2 -->
+    <section id="structure">
+      <h2>2. Structure of an HTML Document</h2>
+      <ul>
+        <li>Every page typically contains: <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>.</li>
+        <li><code>&lt;head&gt;</code> holds metadata: <code>&lt;title&gt;</code>, <code>&lt;meta&gt;</code>, links to CSS and scripts.</li>
+        <li><code>&lt;body&gt;</code> contains visible content: headings, paragraphs, images, forms, etc.</li>
+      </ul>
+
+      <h3>Basic template</h3>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+    &lt;p&gt;Content here.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+
+    <!-- 3 -->
+    <section id="elements">
+      <h2>3. Elements, Tags, and Attributes</h2>
+      <ul>
+        <li><strong>Element</strong> = start tag + content + end tag. Example: <code>&lt;p&gt;text&lt;/p&gt;</code>.</li>
+        <li><strong>Tag</strong> = markup like <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>. Self-closing tags: <code>&lt;br&gt;</code>, <code>&lt;img&gt;</code>.</li>
+        <li><strong>Attribute</strong> adds information inside a tag: <code>&lt;img src="img.jpg" alt="desc"&gt;</code>. Use lowercase and quotes.</li>
+        <li>Best practice: Always include <strong>alt</strong> for images, and meaningful attributes (id, class, title, aria-*).</li>
+      </ul>
+
+      <h3>Common attributes</h3>
+      <ul>
+        <li><code>id</code> — unique identifier.</li>
+        <li><code>class</code> — reusable style/selector.</li>
+        <li><code>title</code> — mouse tooltip / accessibility hint.</li>
+        <li><code>data-*</code> — custom data attributes for JS.</li>
+      </ul>
+    </section>
+
+    <!-- 4 -->
+    <section id="headings-paragraphs-lists">
+      <h2>4. Headings, Paragraphs, and Lists</h2>
+      <ul>
+        <li><strong>Headings:</strong> <code>&lt;h1&gt;</code> (top) to <code>&lt;h6&gt;</code> (small). Use for document structure (semantic).</li>
+        <li><strong>Paragraph:</strong> <code>&lt;p&gt;</code> — block text with margin. Use for paragraphs, not for spacing.</li>
+        <li><strong>Lists:</strong>
+          <ul>
+            <li><code>&lt;ul&gt;</code> — unordered (bullets)</li>
+            <li><code>&lt;ol&gt;</code> — ordered (numbers)</li>
+            <li>List item: <code>&lt;li&gt;</code>. Use lists for actual lists, not layout.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Example</h3>
+      <pre><code>&lt;h2&gt;Shopping&lt;/h2&gt;
+&lt;p&gt;Buy these items:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+  &lt;li&gt;Bread&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </section>
+
+    <!-- 5 -->
+    <section id="links-images-tables-forms">
+      <h2>5. Links, Images, Tables, and Forms</h2>
+      <h3>Links</h3>
+      <ul>
+        <li>Anchor: <code>&lt;a href="URL"&gt;link text&lt;/a&gt;</code>. Use absolute or relative URLs.</li>
+        <li>Use <code>target="_blank"</code> to open new tab and <code>rel="noopener noreferrer"</code> for security.</li>
+      </ul>
+
+      <h3>Images</h3>
+      <ul>
+        <li><code>&lt;img src="path.jpg" alt="description" width="300"&gt;</code>. Always provide descriptive <code>alt</code>.</li>
+        <li>Use responsive images: <code>srcset</code>, <code>sizes</code>, and <code>picture</code> element.</li>
+      </ul>
+
+      <h3>Tables</h3>
+      <ul>
+        <li>Basic tags: <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>.</li>
+        <li>Use <code>&lt;caption&gt;</code> and <code>scope</code> on headers for accessibility.</li>
+      </ul>
+
+      <h3>Forms</h3>
+      <ul>
+        <li>Form basics: <code>&lt;form action="/submit" method="post"&gt;</code>.</li>
+        <li>Input types: <code>text, password, email, number, checkbox, radio, file, date</code>.</li>
+        <li>Use <code>label for="id"</code> to link labels and inputs — important for accessibility.</li>
+      </ul>
+
+      <h3>Form example</h3>
+      <pre><code>&lt;form action="/signup" method="post"&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+    </section>
+
+    <!-- 6 -->
+    <section id="semantic-multimedia-iframes">
+      <h2>6. Semantic Tags, Multimedia, and Iframes</h2>
+      <ul>
+        <li><strong>Semantic elements</strong>: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+        <li>Use semantic tags for accessibility, SEO, and clearer structure.</li>
+        <li><strong>Audio/Video:</strong> <code>&lt;audio controls&gt;</code>, <code>&lt;video controls width="640"&gt;</code>. Provide captions via <code>&lt;track&gt;</code>.</li>
+        <li><strong>Iframes:</strong> <code>&lt;iframe src="..." title="desc"&gt;&lt;/iframe&gt;</code>. Use <code>title</code> and sandbox attributes for security.</li>
+      </ul>
+
+      <h3>Multimedia example</h3>
+      <pre><code>&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+    </section>
+
+    <!-- 7 -->
+    <section id="html5-features">
+      <h2>7. HTML5 Features &amp; APIs</h2>
+      <ul>
+        <li><strong>Canvas API</strong>: draw 2D graphics with JavaScript (<code>canvas.getContext('2d')</code>).</li>
+        <li><strong>Audio/Video APIs</strong>: programmatic control of playback, events and tracks.</li>
+        <li><strong>LocalStorage / SessionStorage</strong>: store key/value data in the browser (persistent or per-session).</li>
+        <li><strong>Geolocation API</strong>: request user's location (permission required).</li>
+        <li><strong>Drag &amp; Drop, Web Workers, Service Workers</strong>: background tasks and offline web apps.</li>
+      </ul>
+
+      <h3>Canvas quick example</h3>
+      <pre><code>&lt;canvas id="c" width="200" height="100"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+const c=document.getElementById('c'),ctx=c.getContext('2d');
+ctx.fillStyle='lightblue'; ctx.fillRect(0,0,200,100);
+ctx.fillStyle='black'; ctx.font='16px sans-serif'; ctx.fillText('Canvas demo',10,50);
+&lt;/script&gt;</code></pre>
+    </section>
+
+    <!-- 8 -->
+    <section id="best-practices">
+      <h2>8. Best Practices &amp; Common Mistakes</h2>
+      <ul>
+        <li><strong>Structure first:</strong> write semantic HTML before styling with CSS.</li>
+        <li><strong>Accessibility:</strong> use <code>alt</code>, <code>label</code>, <code>role</code>, and ARIA when needed.</li>
+        <li><strong>Responsive images:</strong> use <code>srcset</code> and <code>picture</code>.</li>
+        <li><strong>Never use tables for layout</strong> — tables are for tabular data only.</li>
+        <li><strong>Validate HTML</strong> using the W3C Validator to catch errors early.</li>
+        <li><strong>Security:</strong> when embedding third-party content, use <code>rel="noopener"</code> and sandbox iframes.</li>
+      </ul>
+    </section>
+
+    <!-- 9 -->
+    <section id="interview">
+      <h2>9. Interview Questions &amp; Key Takeaways</h2>
+      <h3>Quick Interview Questions</h3>
+      <ul>
+        <li><strong>Q:</strong> Difference between <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>? — <strong>A:</strong> <code>&lt;div&gt;</code> is block-level, <code>&lt;span&gt;</code> is inline.</li>
+        <li><strong>Q:</strong> What is semantic HTML? — <strong>A:</strong> Tags that convey meaning: <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, etc.</li>
+        <li><strong>Q:</strong> How to make images responsive? — <strong>A:</strong> Use CSS max-width:100% or <code>srcset</code> and <code>sizes</code>.</li>
+        <li><strong>Q:</strong> When to use <code>localStorage</code> vs cookies? — <strong>A:</strong> localStorage for client-side persistent storage (bigger, not sent to server); cookies for server-read small data.</li>
+      </ul>
+
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li><strong>HTML = structure</strong>; separate concerns: CSS for presentation, JS for behavior.</li>
+        <li>Prefer semantic tags for accessibility and SEO.</li>
+        <li>Progressive enhancement: ensure basic functionality without JS; then enhance.</li>
+        <li>Always consider accessibility (keyboard nav, screen readers, labels).</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><strong>How to save as PDF:</strong> After saving this file as <code>HTML_Complete_Notes.html</code>, open it in a browser → File → Print (Ctrl/Cmd+P) → Destination: Save as PDF → Save.</p>
+      <p class="meta">File ready: <code>HTML_Complete_Notes.html</code> — convert to PDF via browser print dialog for a clean PDF named <code>HTML_Complete_Notes.pdf</code>.</p>
+    </footer>
+  </div>
+</body>
+</html>
